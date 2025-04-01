@@ -1,0 +1,152 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id       String @id @default(uuid())
+  name     String
+  email    String @unique
+  password String
+  is_admin String
+  roles    String
+  status   String
+
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @default(now())
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId String?
+  Company        Company?      @relation(fields: [companyId], references: [id])
+  companyId      String?
+
+  @@map("users")
+}
+
+model Organization {
+  id     String @id @default(uuid())
+  name   String
+  cnpj   String
+  status String
+
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @default(now())
+  companies   Company[]
+  users       User[]
+  Setting     Setting[]
+  Sale        Sale[]
+  Association Association[]
+  Total       Total[]
+
+  @@map("organizations")
+}
+
+model Company {
+  id          String  @id @default(uuid())
+  altername   String?
+  corpreason  String?
+  cnpj        String
+  subnumber   String
+  subname     String
+  cep         String
+  state       String
+  city        String
+  district    String
+  street      String
+  number      String
+  complement  String?
+  telefone    String
+  status      String
+  whatsapp    String
+  observation String?
+
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @default(now())
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId String?
+
+  users User[]
+
+  @@map("companies")
+}
+
+model Setting {
+  id   String  @id @default(uuid())
+  name String?
+  logo String?
+
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId String?
+
+  @@map("settings")
+}
+
+model Sale {
+  id           String @id @default(uuid())
+  cnpj         String
+  filial       String
+  descfilial   String
+  dtvenda      String
+  anomes       String
+  valdevolucao String
+  valvenda     String
+  valmeta      String
+  margem       String
+  representa   String
+
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId String?
+
+  @@map("sales")
+}
+
+model Association {
+  id           String @id @default(uuid())
+  cnpj         String
+  filial       String
+  dtvenda      String
+  assoc        String
+  descassoc    String
+  valdevolucao String
+  valvenda     String
+  valmeta      String
+  margem       String
+  representa   String
+
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId String?
+
+  @@map("associations")
+}
+
+model Total {
+  id      String @id @default(uuid())
+  cnpj    String
+  filial  String
+  datatu  String
+  valdev  String
+  valven  String
+  margem  String
+  permet  String
+  projec  String
+  valjur  String
+  perjur  String
+  valina  String
+  perina  String
+  valest  String
+  valmeta String
+
+  Organization   Organization? @relation(fields: [organizationId], references: [id])
+  organizationId String?
+
+  @@map("totals")
+}
