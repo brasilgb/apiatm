@@ -3,7 +3,7 @@ import prismaClient from "../../prisma";
 import { UserRequest } from "../../models/interfaces/user/UserRequest";
 
 class CreateUserService {
-    async execute({ name, email, password }: UserRequest) {
+    async execute({ name, email, password, is_admin, roles="0", status="1" }: UserRequest) {
         if (!email) {
             throw new Error("Email incorreto");
         }
@@ -25,9 +25,9 @@ class CreateUserService {
                 name: name,
                 email: email,
                 password: passwordHash,
-                is_admin: '0',
-                roles: '0',
-                status: '1'
+                is_admin: is_admin,
+                roles: roles,
+                status: status
             },
             select: {
                 id: true,
