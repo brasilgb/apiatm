@@ -8,7 +8,7 @@ class RemoveUserService {
                 where: {
                     id: user_id
                 }
-            })
+            });
             return removeUser;
         }
     }

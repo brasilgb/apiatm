@@ -1,15 +1,28 @@
 import express, { Request, Response, NextFunction } from 'express';
 
 import { router } from './routes';
-
+import cors from 'cors';
 const app = express();
 const port = 3000;
 
 app.use(express.json());
 app.use(router);
+// {
+    //         "origin": "*",
+    //         "methods": "GET,HEAD,PUT,PATCH,POST,DELETE",
+    //         "preflightContinue": false,
+    //         "optionsSuccessStatus": 204
+    //     }
+    app.use((request: Request, response: Response, next: NextFunction) => {
+        response.header('Access-Control-Allow-Origin', '*');
+        response.header('Access-Control-Allow-Methods', 'GET,HEAD,PUT,PATCH,POST,DELETE');
+        response.header('Access-Control-Allow-Headers', 'Content-Type');
+        app.use(cors());
+        next();
+})
 
 app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
-    if(err instanceof Error) {
+    if (err instanceof Error) {
         return response.status(400).json({
             error: err.message,
         }) as any

@@ -7,6 +7,8 @@ import { AuthUserController } from "./controllers/user/AuthUserController";
 import { CreateOrganizationController } from "./controllers/Organization/CreateOrganizationController";
 import { EditOrganizationController } from "./controllers/Organization/EditOrganizationController";
 import { ListOrganizationController } from "./controllers/Organization/ListOrganizationController";
+import { RemoveOrganizationController } from "./controllers/Organization/RemoveOrganizationController";
+import { ShowOrganizationByIdController } from "./controllers/Organization/ShowOrganizationByIdController";
 
 const router = Router();
 
@@ -22,6 +24,8 @@ router.delete('/user/remove', new RemoveUserController().handle as any);
 //Organization
 router.post('/organization', isAuthenticated as any, new CreateOrganizationController().handle as any);
 router.put('/organization/edit', isAuthenticated as any, new EditOrganizationController().handle as any);
+router.get('/organization/show', isAuthenticated as any, new ShowOrganizationByIdController().handle as any);
 router.get('/organization/all', isAuthenticated as any, new ListOrganizationController().handle as any);
+router.delete('/organization/remove', isAuthenticated as any, new RemoveOrganizationController().handle as any);
 
 export { router };

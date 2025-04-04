@@ -40,10 +40,15 @@ class AuthUserService {
         );
 
         return {
-            id: user?.id,
-            name: user?.name,
-            email: user?.email,
-            token: token
+            user: {
+                id: user?.id,
+                name: user?.name,
+                email: user?.email,
+                is_admin: user?.is_admin,
+                roles: user?.roles,
+                created_at: user?.createdAt,
+                token: token
+            }
         };
     }
 }
