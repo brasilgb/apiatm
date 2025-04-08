@@ -3,8 +3,8 @@ import { OrganizationRequest } from "../../models/interfaces/Organization/Organi
 import { CreateOrganizationService } from "../../services/Organization/CreateOrganizationService";
 
 class CreateOrganizationController {
-async handle(request: Request, response: Response){
-    const { name, cnpj, status}: OrganizationRequest =request.body;
+async handle(request: Request, response: Response) {
+    const { name, cnpj, status}: OrganizationRequest = request.body;
     const createOrganizationService = new CreateOrganizationService();
     const organization = await createOrganizationService.execute({
         name,cnpj,status

@@ -1,6 +1,6 @@
 export interface EditOrganizationRequest {
     name: string;
     cnpj: string;
-    status: string;
+    status: boolean;
     organization_id: string;
 }

@@ -1,7 +1,11 @@
 import prismaClient from "../../prisma";
 
+interface DetailUserServiceRequest {
+    user_id: string;
+}
+
 class DetailUserService {
-    async execute(user_id: string) {
+    async execute({ user_id }: DetailUserServiceRequest) {
         if (user_id) {
             const user = await prismaClient.user.findFirst({
                 where: {
@@ -10,9 +14,11 @@ class DetailUserService {
                 select: {
                     id: true,
                     name: true,
-                    email: true
+                    email: true,
+                    status: true
                 }
             });
+
             return user;
         }
     }
