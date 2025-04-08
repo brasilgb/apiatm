@@ -20,7 +20,7 @@ model User {
   password String
   is_admin String
   roles    String
-  status   String
+  status   Boolean
 
   createdAt      DateTime      @default(now())
   updatedAt      DateTime      @default(now())
@@ -36,7 +36,7 @@ model Organization {
   id     String @id @default(uuid())
   name   String
   cnpj   String
-  status String
+  status Boolean
 
   createdAt   DateTime      @default(now())
   updatedAt   DateTime      @default(now())
@@ -65,7 +65,7 @@ model Company {
   number      String
   complement  String?
   telefone    String
-  status      String
+  status      Boolean
   whatsapp    String
   observation String?
 
