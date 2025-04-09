@@ -15,4 +15,5 @@ export interface CompanyRequest {
     status: boolean;
     whatsapp: string;
     observation: string;
+    organizationId: string;
 }

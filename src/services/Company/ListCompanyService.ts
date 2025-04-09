@@ -21,8 +21,12 @@ class ListCompanyService {
                 status: true,
                 whatsapp: true,
                 observation: true,
-                createdAt: true
+                createdAt: true,
+                Organization: {
+                    select: { name: true}
+                }
             }
+            
         });
         return companies;
     }

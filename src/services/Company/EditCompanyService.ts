@@ -2,12 +2,13 @@ import { EditCompanyResquest } from "../../models/interfaces/Company/EditCompany
 import prismaClient from "../../prisma";
 
 class EditCompanyservice {
-    async execute({ company_id, altername, corpreason, cnpj, subname, subnumber, cep, state, city, district, street, number, complement, telefone, status, whatsapp, observation }: EditCompanyResquest) {
+    async execute({ company_id, altername, corpreason, cnpj, subname, subnumber, cep, state, city, district, street, number, complement, telefone, status, whatsapp, observation, organizationId }: EditCompanyResquest) {
         const companyEdited = await prismaClient.company.update({
             where: {
                 id: company_id
             },
             data: {
+                organizationId: organizationId,
                 altername: altername,
                 corpreason: corpreason,
                 cnpj: cnpj,
