@@ -52,20 +52,20 @@ model Organization {
 
 model Company {
   id          String  @id @default(uuid())
-  altername   String?
+  corpreason  String?
   cnpj        String
   subnumber   String
   subname     String
   cep         String
   state       String
   city        String
-  district    String
-  street      String
-  number      String
+  district    String?
+  street      String?
+  number      String?
   complement  String?
   telefone    String
   status      Boolean
-  whatsapp    String
+  whatsapp    String?
   observation String?
 
   createdAt      DateTime      @default(now())

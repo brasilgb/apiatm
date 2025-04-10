@@ -31,7 +31,6 @@ CREATE TABLE `organizations` (
 -- CreateTable
 CREATE TABLE `companies` (
     `id` VARCHAR(191) NOT NULL,
-    `altername` VARCHAR(191) NULL,
     `corpreason` VARCHAR(191) NULL,
     `cnpj` VARCHAR(191) NOT NULL,
     `subnumber` VARCHAR(191) NOT NULL,

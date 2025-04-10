@@ -1,6 +1,5 @@
 export interface EditCompanyResquest {
     organizationId: string;
-    altername: string;
     corpreason: string;
     cnpj: string;
     subnumber: string;
