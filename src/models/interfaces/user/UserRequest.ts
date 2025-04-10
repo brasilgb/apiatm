@@ -4,5 +4,5 @@ export interface UserRequest {
     password: string;
     is_admin: string;
     roles: string;
-    status: string;
+    status: boolean;
 }
