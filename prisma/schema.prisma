@@ -53,7 +53,6 @@ model Organization {
 model Company {
   id          String  @id @default(uuid())
   altername   String?
-  corpreason  String?
   cnpj        String
   subnumber   String
   subname     String

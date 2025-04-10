@@ -5,7 +5,6 @@ class ListCompanyService {
         const companies = await prismaClient.company.findMany({
             select: {
                 id: true,
-                altername: true,
                 corpreason: true,
                 cnpj: true,
                 subname: true,

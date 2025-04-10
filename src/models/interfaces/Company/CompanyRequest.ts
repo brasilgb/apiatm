@@ -1,5 +1,4 @@
 export interface CompanyRequest {
-    altername: string;
     corpreason: string;
     cnpj: string;
     subnumber: string;
