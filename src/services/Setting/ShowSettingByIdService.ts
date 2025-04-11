@@ -6,11 +6,16 @@ interface ShowSettingByIdRequest {
 
 class ShowSettingByIdService {
     async execute({ setting_id }: ShowSettingByIdRequest) {
-        const findSettingnByIdService = await prismaClient.setting.findFirst({
-            where: {
-                id: setting_id
-            }
-        });
+        const existSetting = await prismaClient.setting.count();
+        if (!existSetting) {
+            const organization = await prismaClient.setting.create({
+                data: {
+                    logo: ""
+                }
+            })
+            return organization;
+        }
+        const findSettingnByIdService = await prismaClient.setting.findFirst();
 
         return findSettingnByIdService;
     }
