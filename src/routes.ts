@@ -15,8 +15,14 @@ import { ListCompanyController } from "./controllers/Company/ListCompanyControll
 import { RemoveCompanyController } from "./controllers/Company/RemoveCompanyController";
 import { ShowCompanyByIdController } from "./controllers/Company/ShowCompanyByIdController";
 import { EditUserController } from "./controllers/user/EditUserController";
+import { EditSettingController } from "./controllers/Setting/EditSettingController";
+import { ShowSettingByIdController } from "./controllers/Setting/ShowSettingByIdController";
+import multer from "multer";
+import uploadConfig from "./config/multer";
+
 
 const router = Router();
+const upload = multer(uploadConfig.upload("./tmp"));
 
 router.get("/teste", (request: Request, response: Response) => {
     return response.json({ ok: true }) as any;
@@ -41,5 +47,9 @@ router.put('/company/edit', isAuthenticated as any, new EditCompanyController().
 router.get('/company/show', isAuthenticated as any, new ShowCompanyByIdController().handle as any);
 router.get('/company/all', isAuthenticated as any, new ListCompanyController().handle as any);
 router.delete('/company/remove', isAuthenticated as any, new RemoveCompanyController().handle as any);
+
+// Setting
+router.get('/setting/show', isAuthenticated as any, new ShowSettingByIdController().handle as any);
+router.put('/setting/edit', isAuthenticated as any, upload.single("file"), new EditSettingController().handle as any );
 
 export { router };
