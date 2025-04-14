@@ -1,32 +1,26 @@
 import { EditSettingRequest } from "../../models/interfaces/Setting/EditSettingRequest";
 import prismaClient from "../../prisma";
-
+import fs from "fs";
 class EditSettingService {
     async execute({ setting_id, logo }: EditSettingRequest) {
 
-        const existSetting = await prismaClient.setting.count();
-        if (existSetting) {
-            const settingEdited = await prismaClient.setting.update({
-                where: {
-                    id: setting_id
-                },
-                data: {
-                    logo: logo
-                }
-            });
-            return settingEdited;
-        } else {
-            const organization = await prismaClient.setting.create({
-                data: {
-                    logo: logo
-                },
-                select: {
-                    id: true,
-                    logo: true,
-                },
-            })
-            return organization;
+        const oldImage = await prismaClient.setting.findUnique({
+            where: {
+                id: setting_id
+            }
+        });
+        if(oldImage.logo){
+            fs.unlinkSync('./public/images/'+ oldImage.logo);
         }
+        const settingEdited = await prismaClient.setting.update({
+            where: {
+                id: setting_id
+            },
+            data: {
+                logo: logo
+            }
+        });
+        return settingEdited;
     }
 }
 export { EditSettingService };

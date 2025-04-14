@@ -16,13 +16,14 @@ import { RemoveCompanyController } from "./controllers/Company/RemoveCompanyCont
 import { ShowCompanyByIdController } from "./controllers/Company/ShowCompanyByIdController";
 import { EditUserController } from "./controllers/user/EditUserController";
 import { EditSettingController } from "./controllers/Setting/EditSettingController";
-import { ShowSettingByIdController } from "./controllers/Setting/ShowSettingByIdController";
+import { ListSettingController } from "./controllers/Setting/ListSettingController";
 import multer from "multer";
 import uploadConfig from "./config/multer";
+import { ListUserController } from "./controllers/user/ListUserController";
 
 
 const router = Router();
-const upload = multer(uploadConfig.upload("./tmp"));
+const upload = multer(uploadConfig.upload("./public/images"));
 
 router.get("/teste", (request: Request, response: Response) => {
     return response.json({ ok: true }) as any;
@@ -31,7 +32,8 @@ router.get("/teste", (request: Request, response: Response) => {
 router.post('/user', new CreateUserController().handle as any);
 router.post('/session', new AuthUserController().handle as any);
 router.put('/user/edit', isAuthenticated as any, new EditUserController().handle as any);
-router.get('/me', isAuthenticated as any, new DetailUserController().handle as any);
+router.get('/user/show', isAuthenticated as any, new DetailUserController().handle as any);
+router.get('/user/all', isAuthenticated as any, new ListUserController().handle as any);
 router.delete('/user/remove', new RemoveUserController().handle as any);
 
 // Organization
@@ -49,7 +51,7 @@ router.get('/company/all', isAuthenticated as any, new ListCompanyController().h
 router.delete('/company/remove', isAuthenticated as any, new RemoveCompanyController().handle as any);
 
 // Setting
-router.get('/setting/show', isAuthenticated as any, new ShowSettingByIdController().handle as any);
-router.put('/setting/edit', isAuthenticated as any, upload.single("file"), new EditSettingController().handle as any );
+router.get('/setting/show', isAuthenticated as any, new ListSettingController().handle as any);
+router.put('/setting/edit', isAuthenticated as any, upload.single("logo"), new EditSettingController().handle as any );
 
 export { router };

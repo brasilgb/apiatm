@@ -15,6 +15,7 @@ app.use(router);
 //     response.header('Access-Control-Allow-Headers', 'Content-Type');
 //     next();
 // })
+app.use('/public/images', express.static('./public/images'));
 
 app.use((err: Error, request: Request, response: Response, next: NextFunction) => {
     if (err instanceof Error) {

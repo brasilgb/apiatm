@@ -8,4 +8,4 @@ class ListCompanyController {
         return response.json(companies);
     }
 }
-export { ListCompanyController };
+export { ListCompanyController }; 
