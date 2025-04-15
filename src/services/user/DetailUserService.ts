@@ -15,7 +15,9 @@ class DetailUserService {
                     id: true,
                     name: true,
                     email: true,
-                    status: true
+                    status: true,
+                    organizationId: true,
+                    companyId: true
                 }
             });
 

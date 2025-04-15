@@ -16,9 +16,9 @@ datasource db {
 model User {
   id       String @id @default(uuid())
   name     String
-  email    String @unique
+  email    String
   password String
-  is_admin String
+  is_admin Boolean
   roles    String
   status   Boolean
 

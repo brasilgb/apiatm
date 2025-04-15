@@ -11,7 +11,12 @@ class ListUserService {
                 is_admin: true,
                 roles: true,
                 status: true,
-                createdAt: true
+                createdAt: true,
+                organizationId: true,
+                companyId: true,
+                Organization: {
+                    select: { name: true}
+                }
             }
         });
         return users;

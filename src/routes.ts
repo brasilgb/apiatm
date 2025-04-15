@@ -34,7 +34,7 @@ router.post('/session', new AuthUserController().handle as any);
 router.put('/user/edit', isAuthenticated as any, new EditUserController().handle as any);
 router.get('/user/show', isAuthenticated as any, new DetailUserController().handle as any);
 router.get('/user/all', isAuthenticated as any, new ListUserController().handle as any);
-router.delete('/user/remove', new RemoveUserController().handle as any);
+router.delete('/user/remove', isAuthenticated as any, new RemoveUserController().handle as any);
 
 // Organization
 router.post('/organization', isAuthenticated as any, new CreateOrganizationController().handle as any);

@@ -47,6 +47,8 @@ class AuthUserService {
                 is_admin: user?.is_admin,
                 roles: user?.roles,
                 created_at: user?.createdAt,
+                organizationId: user?.organizationId,
+                companyId: user?.companyId,
                 token: token
             }
         };

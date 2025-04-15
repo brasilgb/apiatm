@@ -4,6 +4,8 @@ export interface EditUserRequest {
     password: string;
     roles: string;
     status: string;
-    is_admin: string;
+    is_admin: boolean;
     user_id: string;
+    organizationId: string;
+    companyId: string;
 }
