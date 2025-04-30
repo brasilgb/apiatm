@@ -14,7 +14,9 @@ class EditUserService {
             select: {
                 id: true,
                 email: true,
-                password: true
+                password: true,
+                organizationId: true,
+                companyId: true
             },
         });
 
@@ -30,12 +32,12 @@ class EditUserService {
                     password: password === " " ? user.password : passwordHash,
                     roles: roles,
                     is_admin: is_admin,
-                    organizationId: organizationId,
-                    companyId: companyId
+                    organizationId: organizationId ? organizationId : user.organizationId,
+                    companyId: companyId ? companyId : user.companyId,
                 }
             });
 
-            console.log(userEdited);
+            return userEdited;
         } else {
             return "Este e-mail já está em uso";
         }

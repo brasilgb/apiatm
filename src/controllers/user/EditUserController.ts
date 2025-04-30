@@ -11,4 +11,4 @@ class EditUserController {
         return response.json(userEdit);
     }
 }
-export { EditUserController };
+export { EditUserController }; 

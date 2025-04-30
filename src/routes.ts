@@ -54,4 +54,4 @@ router.delete('/company/remove', isAuthenticated as any, new RemoveCompanyContro
 router.get('/setting/show', isAuthenticated as any, new ListSettingController().handle as any);
 router.put('/setting/edit', isAuthenticated as any, upload.single("logo"), new EditSettingController().handle as any );
 
-export { router };
+export { router }; 

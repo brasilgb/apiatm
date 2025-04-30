@@ -16,14 +16,14 @@ class DetailUserService {
                     name: true,
                     email: true,
                     status: true,
+                    is_admin: true,
                     organizationId: true,
                     companyId: true
                 }
             });
-
             return user;
         }
     }
 }
-
+ 
 export { DetailUserService };
