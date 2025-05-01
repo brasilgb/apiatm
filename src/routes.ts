@@ -20,6 +20,7 @@ import { ListSettingController } from "./controllers/Setting/ListSettingControll
 import multer from "multer";
 import uploadConfig from "./config/multer";
 import { ListUserController } from "./controllers/user/ListUserController";
+import { InsertDataAtmController } from "./controllers/DataAtm/InsertDataAtmController";
 
 
 const router = Router();
@@ -53,5 +54,8 @@ router.delete('/company/remove', isAuthenticated as any, new RemoveCompanyContro
 // Setting
 router.get('/setting/show', isAuthenticated as any, new ListSettingController().handle as any);
 router.put('/setting/edit', isAuthenticated as any, upload.single("logo"), new EditSettingController().handle as any );
+
+// Inserir dados para métricas de clientes
+router.post('/data-atm', new InsertDataAtmController().handle as any);
 
 export { router }; 

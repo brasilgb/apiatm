@@ -6,6 +6,7 @@
 
 generator client {
   provider = "prisma-client-js"
+  output   = "./@prisma/client"
 }
 
 datasource db {
@@ -14,7 +15,7 @@ datasource db {
 }
 
 model User {
-  id       String @id @default(uuid())
+  id       String  @id @default(uuid())
   name     String
   email    String
   password String
@@ -33,7 +34,7 @@ model User {
 }
 
 model Organization {
-  id     String @id @default(uuid())
+  id     String  @id @default(uuid())
   name   String
   cnpj   String
   status Boolean
@@ -90,17 +91,16 @@ model Setting {
 }
 
 model Sale {
-  id           String @id @default(uuid())
-  cnpj         String
-  filial       String
-  descfilial   String
-  dtvenda      String
-  anomes       String
-  valdevolucao String
-  valvenda     String
-  valmeta      String
-  margem       String
-  representa   String
+  id            String @id @default(uuid())
+  resumo_cnpj   String
+  resumo_codfil String
+  resumo_desfil String
+  resumo_datmvt String
+  resumo_valdev String
+  resumo_valven String
+  resumo_margem String
+  resumo_presen String
+  resumo_metdia String
 
   Organization   Organization? @relation(fields: [organizationId], references: [id])
   organizationId String?
@@ -110,16 +110,16 @@ model Sale {
 
 model Association {
   id           String @id @default(uuid())
-  cnpj         String
-  filial       String
-  dtvenda      String
-  assoc        String
-  descassoc    String
-  valdevolucao String
-  valvenda     String
-  valmeta      String
-  margem       String
-  representa   String
+  assoc_cnpj   String
+  assoc_filial String
+  assoc_datmvt String
+  assoc_ass    String
+  assoc_desass String
+  assoc_valdev String
+  assoc_valven String
+  assoc_margem String
+  assoc_repres String
+  assoc_metdia String
 
   Organization   Organization? @relation(fields: [organizationId], references: [id])
   organizationId String?
@@ -128,21 +128,21 @@ model Association {
 }
 
 model Total {
-  id      String @id @default(uuid())
-  cnpj    String
-  filial  String
-  datatu  String
-  valdev  String
-  valven  String
-  margem  String
-  permet  String
-  projec  String
-  valjur  String
-  perjur  String
-  valina  String
-  perina  String
-  valest  String
-  valmeta String
+  id           String @id @default(uuid())
+  total_cnpj   String
+  total_datatu String
+  total_filial String
+  total_valdev String
+  total_valven String
+  total_margem String
+  total_permet String
+  total_projec String
+  total_valjur String
+  total_perjur String
+  total_valina String
+  total_perina String
+  total_valest String
+  total_meta   String
 
   Organization   Organization? @relation(fields: [organizationId], references: [id])
   organizationId String?
