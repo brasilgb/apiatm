@@ -10105,7 +10105,7 @@ export namespace Prisma {
   }
 
   export type SaleCreateInput = {
-    id?: string
+    id: string
     resumo_cnpj: string
     resumo_codfil: string
     resumo_desfil: string
@@ -10119,7 +10119,7 @@ export namespace Prisma {
   }
 
   export type SaleUncheckedCreateInput = {
-    id?: string
+    id: string
     resumo_cnpj: string
     resumo_codfil: string
     resumo_desfil: string
@@ -10161,7 +10161,7 @@ export namespace Prisma {
   }
 
   export type SaleCreateManyInput = {
-    id?: string
+    id: string
     resumo_cnpj: string
     resumo_codfil: string
     resumo_desfil: string
@@ -10202,7 +10202,7 @@ export namespace Prisma {
   }
 
   export type AssociationCreateInput = {
-    id?: string
+    id: string
     assoc_cnpj: string
     assoc_filial: string
     assoc_datmvt: string
@@ -10217,7 +10217,7 @@ export namespace Prisma {
   }
 
   export type AssociationUncheckedCreateInput = {
-    id?: string
+    id: string
     assoc_cnpj: string
     assoc_filial: string
     assoc_datmvt: string
@@ -10262,7 +10262,7 @@ export namespace Prisma {
   }
 
   export type AssociationCreateManyInput = {
-    id?: string
+    id: string
     assoc_cnpj: string
     assoc_filial: string
     assoc_datmvt: string
@@ -10306,7 +10306,7 @@ export namespace Prisma {
   }
 
   export type TotalCreateInput = {
-    id?: string
+    id: string
     total_cnpj: string
     total_datatu: string
     total_filial: string
@@ -10325,7 +10325,7 @@ export namespace Prisma {
   }
 
   export type TotalUncheckedCreateInput = {
-    id?: string
+    id: string
     total_cnpj: string
     total_datatu: string
     total_filial: string
@@ -10382,7 +10382,7 @@ export namespace Prisma {
   }
 
   export type TotalCreateManyInput = {
-    id?: string
+    id: string
     total_cnpj: string
     total_datatu: string
     total_filial: string
@@ -11795,7 +11795,7 @@ export namespace Prisma {
   }
 
   export type SaleCreateWithoutOrganizationInput = {
-    id?: string
+    id: string
     resumo_cnpj: string
     resumo_codfil: string
     resumo_desfil: string
@@ -11808,7 +11808,7 @@ export namespace Prisma {
   }
 
   export type SaleUncheckedCreateWithoutOrganizationInput = {
-    id?: string
+    id: string
     resumo_cnpj: string
     resumo_codfil: string
     resumo_desfil: string
@@ -11831,7 +11831,7 @@ export namespace Prisma {
   }
 
   export type AssociationCreateWithoutOrganizationInput = {
-    id?: string
+    id: string
     assoc_cnpj: string
     assoc_filial: string
     assoc_datmvt: string
@@ -11845,7 +11845,7 @@ export namespace Prisma {
   }
 
   export type AssociationUncheckedCreateWithoutOrganizationInput = {
-    id?: string
+    id: string
     assoc_cnpj: string
     assoc_filial: string
     assoc_datmvt: string
@@ -11869,7 +11869,7 @@ export namespace Prisma {
   }
 
   export type TotalCreateWithoutOrganizationInput = {
-    id?: string
+    id: string
     total_cnpj: string
     total_datatu: string
     total_filial: string
@@ -11887,7 +11887,7 @@ export namespace Prisma {
   }
 
   export type TotalUncheckedCreateWithoutOrganizationInput = {
-    id?: string
+    id: string
     total_cnpj: string
     total_datatu: string
     total_filial: string
@@ -12572,7 +12572,7 @@ export namespace Prisma {
   }
 
   export type SaleCreateManyOrganizationInput = {
-    id?: string
+    id: string
     resumo_cnpj: string
     resumo_codfil: string
     resumo_desfil: string
@@ -12585,7 +12585,7 @@ export namespace Prisma {
   }
 
   export type AssociationCreateManyOrganizationInput = {
-    id?: string
+    id: string
     assoc_cnpj: string
     assoc_filial: string
     assoc_datmvt: string
@@ -12599,7 +12599,7 @@ export namespace Prisma {
   }
 
   export type TotalCreateManyOrganizationInput = {
-    id?: string
+    id: string
     total_cnpj: string
     total_datatu: string
     total_filial: string

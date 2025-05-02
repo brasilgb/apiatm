@@ -1,13 +1,13 @@
 export interface AssociationRequest {
-    cnpj: string;
-    filial: string;
-    dtvenda: string;
-    assoc: string;
-    descassoc: string;
-    valdevolucao: string;
-    valvenda: string;
-    valmeta: string;
-    margem: string;
-    representa: string;
+    id: string;
+    assoc_cnpj: string;
+    assoc_codfil: string;
+    assoc_desfil: string;
+    assoc_datmvt: string;
+    assoc_valdev: string;
+    assoc_valven: string;
+    assoc_margem: string;
+    assoc_presen: string;
+    assoc_metdia: string;
     organizationId: string;
 }

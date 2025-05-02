@@ -91,7 +91,7 @@ model Setting {
 }
 
 model Sale {
-  id            String @id @default(uuid())
+  id            String @id
   resumo_cnpj   String
   resumo_codfil String
   resumo_desfil String
@@ -109,7 +109,7 @@ model Sale {
 }
 
 model Association {
-  id           String @id @default(uuid())
+  id           String @id
   assoc_cnpj   String
   assoc_filial String
   assoc_datmvt String
@@ -128,7 +128,7 @@ model Association {
 }
 
 model Total {
-  id           String @id @default(uuid())
+  id           String @id
   total_cnpj   String
   total_datatu String
   total_filial String

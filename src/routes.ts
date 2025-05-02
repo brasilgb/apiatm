@@ -21,6 +21,7 @@ import multer from "multer";
 import uploadConfig from "./config/multer";
 import { ListUserController } from "./controllers/user/ListUserController";
 import { InsertDataAtmController } from "./controllers/DataAtm/InsertDataAtmController";
+import { ShowSaleController } from "./controllers/Sale/ShowSaleController";
 
 
 const router = Router();
@@ -57,5 +58,6 @@ router.put('/setting/edit', isAuthenticated as any, upload.single("logo"), new E
 
 // Inserir dados para métricas de clientes
 router.post('/data-atm', new InsertDataAtmController().handle as any);
+router.get('/data-sale', isAuthenticated as any, new ShowSaleController().handle as any);
 
 export { router }; 
