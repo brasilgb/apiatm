@@ -91,16 +91,17 @@ model Setting {
 }
 
 model Sale {
-  id            String @id
-  resumo_cnpj   String
-  resumo_codfil String
-  resumo_desfil String
-  resumo_datmvt String
-  resumo_valdev String
-  resumo_valven String
-  resumo_margem String
-  resumo_presen String
-  resumo_metdia String
+  id               String @id
+  resumo_cnpj      String
+  resumo_codfil    String
+  resumo_desfil    String
+  resumo_datmvt    String
+  resumo_yearmonth String
+  resumo_valdev    String
+  resumo_valven    String
+  resumo_margem    String
+  resumo_presen    String
+  resumo_metdia    String
 
   Organization   Organization? @relation(fields: [organizationId], references: [id])
   organizationId String?

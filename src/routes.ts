@@ -22,6 +22,9 @@ import uploadConfig from "./config/multer";
 import { ListUserController } from "./controllers/user/ListUserController";
 import { InsertDataAtmController } from "./controllers/DataAtm/InsertDataAtmController";
 import { ShowSaleController } from "./controllers/Sale/ShowSaleController";
+import { ShowAssocController } from "./controllers/Assoc/ShowAssocController";
+import { ShowTotalController } from "./controllers/Total/ShowTotalController";
+import { ChartCompositeController } from "./controllers/Charts/ChartCompositeController";
 
 
 const router = Router();
@@ -59,5 +62,8 @@ router.put('/setting/edit', isAuthenticated as any, upload.single("logo"), new E
 // Inserir dados para métricas de clientes
 router.post('/data-atm', new InsertDataAtmController().handle as any);
 router.get('/data-sale', isAuthenticated as any, new ShowSaleController().handle as any);
+router.get('/data-assoc', isAuthenticated as any, new ShowAssocController().handle as any);
+router.get('/data-total', isAuthenticated as any, new ShowTotalController().handle as any);
+router.get('/data-chart', isAuthenticated as any, new ChartCompositeController().handle as any);
 
 export { router }; 

@@ -5693,6 +5693,7 @@ export namespace Prisma {
     resumo_codfil: string | null
     resumo_desfil: string | null
     resumo_datmvt: string | null
+    resumo_yearmonth: string | null
     resumo_valdev: string | null
     resumo_valven: string | null
     resumo_margem: string | null
@@ -5707,6 +5708,7 @@ export namespace Prisma {
     resumo_codfil: string | null
     resumo_desfil: string | null
     resumo_datmvt: string | null
+    resumo_yearmonth: string | null
     resumo_valdev: string | null
     resumo_valven: string | null
     resumo_margem: string | null
@@ -5721,6 +5723,7 @@ export namespace Prisma {
     resumo_codfil: number
     resumo_desfil: number
     resumo_datmvt: number
+    resumo_yearmonth: number
     resumo_valdev: number
     resumo_valven: number
     resumo_margem: number
@@ -5737,6 +5740,7 @@ export namespace Prisma {
     resumo_codfil?: true
     resumo_desfil?: true
     resumo_datmvt?: true
+    resumo_yearmonth?: true
     resumo_valdev?: true
     resumo_valven?: true
     resumo_margem?: true
@@ -5751,6 +5755,7 @@ export namespace Prisma {
     resumo_codfil?: true
     resumo_desfil?: true
     resumo_datmvt?: true
+    resumo_yearmonth?: true
     resumo_valdev?: true
     resumo_valven?: true
     resumo_margem?: true
@@ -5765,6 +5770,7 @@ export namespace Prisma {
     resumo_codfil?: true
     resumo_desfil?: true
     resumo_datmvt?: true
+    resumo_yearmonth?: true
     resumo_valdev?: true
     resumo_valven?: true
     resumo_margem?: true
@@ -5852,6 +5858,7 @@ export namespace Prisma {
     resumo_codfil: string
     resumo_desfil: string
     resumo_datmvt: string
+    resumo_yearmonth: string
     resumo_valdev: string
     resumo_valven: string
     resumo_margem: string
@@ -5883,6 +5890,7 @@ export namespace Prisma {
     resumo_codfil?: boolean
     resumo_desfil?: boolean
     resumo_datmvt?: boolean
+    resumo_yearmonth?: boolean
     resumo_valdev?: boolean
     resumo_valven?: boolean
     resumo_margem?: boolean
@@ -5900,6 +5908,7 @@ export namespace Prisma {
     resumo_codfil?: boolean
     resumo_desfil?: boolean
     resumo_datmvt?: boolean
+    resumo_yearmonth?: boolean
     resumo_valdev?: boolean
     resumo_valven?: boolean
     resumo_margem?: boolean
@@ -5908,7 +5917,7 @@ export namespace Prisma {
     organizationId?: boolean
   }
 
-  export type SaleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "resumo_cnpj" | "resumo_codfil" | "resumo_desfil" | "resumo_datmvt" | "resumo_valdev" | "resumo_valven" | "resumo_margem" | "resumo_presen" | "resumo_metdia" | "organizationId", ExtArgs["result"]["sale"]>
+  export type SaleOmit<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = $Extensions.GetOmit<"id" | "resumo_cnpj" | "resumo_codfil" | "resumo_desfil" | "resumo_datmvt" | "resumo_yearmonth" | "resumo_valdev" | "resumo_valven" | "resumo_margem" | "resumo_presen" | "resumo_metdia" | "organizationId", ExtArgs["result"]["sale"]>
   export type SaleInclude<ExtArgs extends $Extensions.InternalArgs = $Extensions.DefaultArgs> = {
     Organization?: boolean | Sale$OrganizationArgs<ExtArgs>
   }
@@ -5924,6 +5933,7 @@ export namespace Prisma {
       resumo_codfil: string
       resumo_desfil: string
       resumo_datmvt: string
+      resumo_yearmonth: string
       resumo_valdev: string
       resumo_valven: string
       resumo_margem: string
@@ -6305,6 +6315,7 @@ export namespace Prisma {
     readonly resumo_codfil: FieldRef<"Sale", 'String'>
     readonly resumo_desfil: FieldRef<"Sale", 'String'>
     readonly resumo_datmvt: FieldRef<"Sale", 'String'>
+    readonly resumo_yearmonth: FieldRef<"Sale", 'String'>
     readonly resumo_valdev: FieldRef<"Sale", 'String'>
     readonly resumo_valven: FieldRef<"Sale", 'String'>
     readonly resumo_margem: FieldRef<"Sale", 'String'>
@@ -8869,6 +8880,7 @@ export namespace Prisma {
     resumo_codfil: 'resumo_codfil',
     resumo_desfil: 'resumo_desfil',
     resumo_datmvt: 'resumo_datmvt',
+    resumo_yearmonth: 'resumo_yearmonth',
     resumo_valdev: 'resumo_valdev',
     resumo_valven: 'resumo_valven',
     resumo_margem: 'resumo_margem',
@@ -8996,6 +9008,7 @@ export namespace Prisma {
     resumo_codfil: 'resumo_codfil',
     resumo_desfil: 'resumo_desfil',
     resumo_datmvt: 'resumo_datmvt',
+    resumo_yearmonth: 'resumo_yearmonth',
     resumo_valdev: 'resumo_valdev',
     resumo_valven: 'resumo_valven',
     resumo_margem: 'resumo_margem',
@@ -9437,6 +9450,7 @@ export namespace Prisma {
     resumo_codfil?: StringFilter<"Sale"> | string
     resumo_desfil?: StringFilter<"Sale"> | string
     resumo_datmvt?: StringFilter<"Sale"> | string
+    resumo_yearmonth?: StringFilter<"Sale"> | string
     resumo_valdev?: StringFilter<"Sale"> | string
     resumo_valven?: StringFilter<"Sale"> | string
     resumo_margem?: StringFilter<"Sale"> | string
@@ -9452,6 +9466,7 @@ export namespace Prisma {
     resumo_codfil?: SortOrder
     resumo_desfil?: SortOrder
     resumo_datmvt?: SortOrder
+    resumo_yearmonth?: SortOrder
     resumo_valdev?: SortOrder
     resumo_valven?: SortOrder
     resumo_margem?: SortOrder
@@ -9471,6 +9486,7 @@ export namespace Prisma {
     resumo_codfil?: StringFilter<"Sale"> | string
     resumo_desfil?: StringFilter<"Sale"> | string
     resumo_datmvt?: StringFilter<"Sale"> | string
+    resumo_yearmonth?: StringFilter<"Sale"> | string
     resumo_valdev?: StringFilter<"Sale"> | string
     resumo_valven?: StringFilter<"Sale"> | string
     resumo_margem?: StringFilter<"Sale"> | string
@@ -9486,6 +9502,7 @@ export namespace Prisma {
     resumo_codfil?: SortOrder
     resumo_desfil?: SortOrder
     resumo_datmvt?: SortOrder
+    resumo_yearmonth?: SortOrder
     resumo_valdev?: SortOrder
     resumo_valven?: SortOrder
     resumo_margem?: SortOrder
@@ -9506,6 +9523,7 @@ export namespace Prisma {
     resumo_codfil?: StringWithAggregatesFilter<"Sale"> | string
     resumo_desfil?: StringWithAggregatesFilter<"Sale"> | string
     resumo_datmvt?: StringWithAggregatesFilter<"Sale"> | string
+    resumo_yearmonth?: StringWithAggregatesFilter<"Sale"> | string
     resumo_valdev?: StringWithAggregatesFilter<"Sale"> | string
     resumo_valven?: StringWithAggregatesFilter<"Sale"> | string
     resumo_margem?: StringWithAggregatesFilter<"Sale"> | string
@@ -10110,6 +10128,7 @@ export namespace Prisma {
     resumo_codfil: string
     resumo_desfil: string
     resumo_datmvt: string
+    resumo_yearmonth: string
     resumo_valdev: string
     resumo_valven: string
     resumo_margem: string
@@ -10124,6 +10143,7 @@ export namespace Prisma {
     resumo_codfil: string
     resumo_desfil: string
     resumo_datmvt: string
+    resumo_yearmonth: string
     resumo_valdev: string
     resumo_valven: string
     resumo_margem: string
@@ -10138,6 +10158,7 @@ export namespace Prisma {
     resumo_codfil?: StringFieldUpdateOperationsInput | string
     resumo_desfil?: StringFieldUpdateOperationsInput | string
     resumo_datmvt?: StringFieldUpdateOperationsInput | string
+    resumo_yearmonth?: StringFieldUpdateOperationsInput | string
     resumo_valdev?: StringFieldUpdateOperationsInput | string
     resumo_valven?: StringFieldUpdateOperationsInput | string
     resumo_margem?: StringFieldUpdateOperationsInput | string
@@ -10152,6 +10173,7 @@ export namespace Prisma {
     resumo_codfil?: StringFieldUpdateOperationsInput | string
     resumo_desfil?: StringFieldUpdateOperationsInput | string
     resumo_datmvt?: StringFieldUpdateOperationsInput | string
+    resumo_yearmonth?: StringFieldUpdateOperationsInput | string
     resumo_valdev?: StringFieldUpdateOperationsInput | string
     resumo_valven?: StringFieldUpdateOperationsInput | string
     resumo_margem?: StringFieldUpdateOperationsInput | string
@@ -10166,6 +10188,7 @@ export namespace Prisma {
     resumo_codfil: string
     resumo_desfil: string
     resumo_datmvt: string
+    resumo_yearmonth: string
     resumo_valdev: string
     resumo_valven: string
     resumo_margem: string
@@ -10180,6 +10203,7 @@ export namespace Prisma {
     resumo_codfil?: StringFieldUpdateOperationsInput | string
     resumo_desfil?: StringFieldUpdateOperationsInput | string
     resumo_datmvt?: StringFieldUpdateOperationsInput | string
+    resumo_yearmonth?: StringFieldUpdateOperationsInput | string
     resumo_valdev?: StringFieldUpdateOperationsInput | string
     resumo_valven?: StringFieldUpdateOperationsInput | string
     resumo_margem?: StringFieldUpdateOperationsInput | string
@@ -10193,6 +10217,7 @@ export namespace Prisma {
     resumo_codfil?: StringFieldUpdateOperationsInput | string
     resumo_desfil?: StringFieldUpdateOperationsInput | string
     resumo_datmvt?: StringFieldUpdateOperationsInput | string
+    resumo_yearmonth?: StringFieldUpdateOperationsInput | string
     resumo_valdev?: StringFieldUpdateOperationsInput | string
     resumo_valven?: StringFieldUpdateOperationsInput | string
     resumo_margem?: StringFieldUpdateOperationsInput | string
@@ -10808,6 +10833,7 @@ export namespace Prisma {
     resumo_codfil?: SortOrder
     resumo_desfil?: SortOrder
     resumo_datmvt?: SortOrder
+    resumo_yearmonth?: SortOrder
     resumo_valdev?: SortOrder
     resumo_valven?: SortOrder
     resumo_margem?: SortOrder
@@ -10822,6 +10848,7 @@ export namespace Prisma {
     resumo_codfil?: SortOrder
     resumo_desfil?: SortOrder
     resumo_datmvt?: SortOrder
+    resumo_yearmonth?: SortOrder
     resumo_valdev?: SortOrder
     resumo_valven?: SortOrder
     resumo_margem?: SortOrder
@@ -10836,6 +10863,7 @@ export namespace Prisma {
     resumo_codfil?: SortOrder
     resumo_desfil?: SortOrder
     resumo_datmvt?: SortOrder
+    resumo_yearmonth?: SortOrder
     resumo_valdev?: SortOrder
     resumo_valven?: SortOrder
     resumo_margem?: SortOrder
@@ -11800,6 +11828,7 @@ export namespace Prisma {
     resumo_codfil: string
     resumo_desfil: string
     resumo_datmvt: string
+    resumo_yearmonth: string
     resumo_valdev: string
     resumo_valven: string
     resumo_margem: string
@@ -11813,6 +11842,7 @@ export namespace Prisma {
     resumo_codfil: string
     resumo_desfil: string
     resumo_datmvt: string
+    resumo_yearmonth: string
     resumo_valdev: string
     resumo_valven: string
     resumo_margem: string
@@ -12039,6 +12069,7 @@ export namespace Prisma {
     resumo_codfil?: StringFilter<"Sale"> | string
     resumo_desfil?: StringFilter<"Sale"> | string
     resumo_datmvt?: StringFilter<"Sale"> | string
+    resumo_yearmonth?: StringFilter<"Sale"> | string
     resumo_valdev?: StringFilter<"Sale"> | string
     resumo_valven?: StringFilter<"Sale"> | string
     resumo_margem?: StringFilter<"Sale"> | string
@@ -12577,6 +12608,7 @@ export namespace Prisma {
     resumo_codfil: string
     resumo_desfil: string
     resumo_datmvt: string
+    resumo_yearmonth: string
     resumo_valdev: string
     resumo_valven: string
     resumo_margem: string
@@ -12744,6 +12776,7 @@ export namespace Prisma {
     resumo_codfil?: StringFieldUpdateOperationsInput | string
     resumo_desfil?: StringFieldUpdateOperationsInput | string
     resumo_datmvt?: StringFieldUpdateOperationsInput | string
+    resumo_yearmonth?: StringFieldUpdateOperationsInput | string
     resumo_valdev?: StringFieldUpdateOperationsInput | string
     resumo_valven?: StringFieldUpdateOperationsInput | string
     resumo_margem?: StringFieldUpdateOperationsInput | string
@@ -12757,6 +12790,7 @@ export namespace Prisma {
     resumo_codfil?: StringFieldUpdateOperationsInput | string
     resumo_desfil?: StringFieldUpdateOperationsInput | string
     resumo_datmvt?: StringFieldUpdateOperationsInput | string
+    resumo_yearmonth?: StringFieldUpdateOperationsInput | string
     resumo_valdev?: StringFieldUpdateOperationsInput | string
     resumo_valven?: StringFieldUpdateOperationsInput | string
     resumo_margem?: StringFieldUpdateOperationsInput | string
@@ -12770,6 +12804,7 @@ export namespace Prisma {
     resumo_codfil?: StringFieldUpdateOperationsInput | string
     resumo_desfil?: StringFieldUpdateOperationsInput | string
     resumo_datmvt?: StringFieldUpdateOperationsInput | string
+    resumo_yearmonth?: StringFieldUpdateOperationsInput | string
     resumo_valdev?: StringFieldUpdateOperationsInput | string
     resumo_valven?: StringFieldUpdateOperationsInput | string
     resumo_margem?: StringFieldUpdateOperationsInput | string

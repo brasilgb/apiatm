@@ -29,14 +29,15 @@ class InsertDataAtmService {
                         },
                         data: {
                             resumo_cnpj: jdata.resumo_cnpj,
-                            resumo_codfil: jdata.resumo_codfil,
+                            resumo_codfil: (parseInt(jdata.resumo_codfil)).toString(),
                             resumo_desfil: jdata.resumo_desfil,
                             resumo_datmvt: jdata.resumo_datmvt,
+                            resumo_yearmonth: (jdata.resumo_datmvt).slice(0, 6),
                             resumo_valdev: jdata.resumo_valdev,
-                            resumo_valven: jdata.resumo_valven,
-                            resumo_margem: jdata.resumo_margem,
-                            resumo_presen: jdata.resumo_presen,
-                            resumo_metdia: jdata.resumo_metdia,
+                            resumo_valven: (parseFloat(jdata.resumo_valven)).toString(),
+                            resumo_margem: (parseFloat(jdata.resumo_margem)).toString(),
+                            resumo_presen: (parseFloat(jdata.resumo_presen)).toString(),
+                            resumo_metdia: (parseFloat(jdata.resumo_metdia)).toString(),
                             organizationId: org.id
                         },
                     });
@@ -46,14 +47,15 @@ class InsertDataAtmService {
                         data: {
                             id: org.id + jdata.resumo_codfil + jdata.resumo_cnpj + jdata.resumo_datmvt,
                             resumo_cnpj: jdata.resumo_cnpj,
-                            resumo_codfil: jdata.resumo_codfil,
+                            resumo_codfil: (parseInt(jdata.resumo_codfil)).toString(),
                             resumo_desfil: jdata.resumo_desfil,
                             resumo_datmvt: jdata.resumo_datmvt,
+                            resumo_yearmonth: (jdata.resumo_datmvt).slice(0, 6),
                             resumo_valdev: jdata.resumo_valdev,
-                            resumo_valven: jdata.resumo_valven,
-                            resumo_margem: jdata.resumo_margem,
-                            resumo_presen: jdata.resumo_presen,
-                            resumo_metdia: jdata.resumo_metdia,
+                            resumo_valven: (parseFloat(jdata.resumo_valven)).toString(),
+                            resumo_margem: (parseFloat(jdata.resumo_margem)).toString(),
+                            resumo_presen: (parseFloat(jdata.resumo_presen)).toString(),
+                            resumo_metdia: (parseFloat(jdata.resumo_metdia)).toString(),
                             organizationId: org.id
                         }
                     });
@@ -92,7 +94,7 @@ class InsertDataAtmService {
                         },
                         data: {
                             assoc_cnpj: jdata.assoc_cnpj,
-                            assoc_filial: jdata.assoc_filial,
+                            assoc_filial: (parseInt(jdata.assoc_filial)).toString(),
                             assoc_datmvt: jdata.assoc_datmvt,
                             assoc_ass: jdata.assoc_ass,
                             assoc_desass: jdata.assoc_desass,
@@ -110,7 +112,7 @@ class InsertDataAtmService {
                         data: {
                             id: org.id + jdata.assoc_filial + jdata.assoc_cnpj + jdata.assoc_datmvt + jdata.assoc_ass,
                             assoc_cnpj: jdata.assoc_cnpj,
-                            assoc_filial: jdata.assoc_filial,
+                            assoc_filial: (parseInt(jdata.assoc_filial)).toString(),
                             assoc_datmvt: jdata.assoc_datmvt,
                             assoc_ass: jdata.assoc_ass,
                             assoc_desass: jdata.assoc_desass,
@@ -158,10 +160,10 @@ class InsertDataAtmService {
                         data: {
                             total_cnpj: jdata.total_cnpj,
                             total_datatu: jdata.total_datatu,
-                            total_filial: jdata.total_filial,
+                            total_filial: (parseInt(jdata.total_filial)).toString(),
                             total_valdev: jdata.total_valdev,
-                            total_valven: jdata.total_valven,
-                            total_margem: jdata.total_margem,
+                            total_valven: (parseFloat(jdata.total_valven)).toString(),
+                            total_margem: (parseFloat(jdata.total_margem)).toString(),
                             total_permet: jdata.total_permet,
                             total_projec: jdata.total_projec,
                             total_valjur: jdata.total_valjur,
@@ -169,7 +171,7 @@ class InsertDataAtmService {
                             total_valina: jdata.total_valina,
                             total_perina: jdata.total_perina,
                             total_valest: jdata.total_valest,
-                            total_meta: jdata.total_meta,
+                            total_meta: (parseFloat(jdata.total_meta)).toString(),
                             organizationId: org.id
                         },
                     });
@@ -180,10 +182,10 @@ class InsertDataAtmService {
                             id: org.id + jdata.total_filial + jdata.total_cnpj + jdata.total_datatu,
                             total_cnpj: jdata.total_cnpj,
                             total_datatu: jdata.total_datatu,
-                            total_filial: jdata.total_filial,
+                            total_filial: (parseInt(jdata.total_filial)).toString(),
                             total_valdev: jdata.total_valdev,
-                            total_valven: jdata.total_valven,
-                            total_margem: jdata.total_margem,
+                            total_valven: (parseFloat(jdata.total_valven)).toString(),
+                            total_margem: (parseFloat(jdata.total_margem)).toString(),
                             total_permet: jdata.total_permet,
                             total_projec: jdata.total_projec,
                             total_valjur: jdata.total_valjur,
@@ -191,7 +193,7 @@ class InsertDataAtmService {
                             total_valina: jdata.total_valina,
                             total_perina: jdata.total_perina,
                             total_valest: jdata.total_valest,
-                            total_meta: jdata.total_meta,
+                            total_meta: (parseFloat(jdata.total_meta)).toString(),
                             organizationId: org.id
                         }
                     });

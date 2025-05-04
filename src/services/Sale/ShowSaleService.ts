@@ -1,18 +1,21 @@
 import prismaClient from "../../prisma";
 
 interface ShowSaleServiceRequest {
-    org_id : string;
-    comp_id: string;
+    org : string;
+    com: string;
+    dat: string;
 }
 
 class ShowSaleService {
-    async execute({ org_id, comp_id }: ShowSaleServiceRequest) {
+    async execute({ org, com, dat}: ShowSaleServiceRequest) {
         const showSaleService = await prismaClient.sale.findMany({
             where: {
-                organizationId: org_id,
-                resumo_codfil: comp_id,
+                organizationId: org,
+                resumo_codfil: com,
+                resumo_yearmonth: dat,
             }
         });
+console.log(showSaleService);
 
         return showSaleService;
     }
