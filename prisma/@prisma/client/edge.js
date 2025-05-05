@@ -315,7 +315,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/home/anderson/Projetos/nodejs/apiatm/prisma/@prisma/client",
+      "value": "C:\\Users\\anderson.rodrigues\\Projects\\NodeJs\\apiatm\\prisma\\@prisma\\client",
       "fromEnvVar": null
     },
     "config": {
@@ -324,16 +324,16 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "debian-openssl-3.0.x",
+        "value": "windows",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/home/anderson/Projetos/nodejs/apiatm/prisma/schema.prisma",
+    "sourceFilePath": "C:\\Users\\anderson.rodrigues\\Projects\\NodeJs\\apiatm\\prisma\\schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
+    "rootEnvPath": "../../../.env",
     "schemaEnvPath": "../../../.env"
   },
   "relativePath": "../..",

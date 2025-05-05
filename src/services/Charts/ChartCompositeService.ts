@@ -13,6 +13,13 @@ class ChartCompositeService {
                 organizationId: org,
                 resumo_codfil: com,
                 resumo_yearmonth: my,
+            },
+            select: {
+                id: true,
+                resumo_datmvt: true,
+                resumo_valven: true,
+                resumo_margem: true,
+                resumo_metdia: true,
             }
         });
 
