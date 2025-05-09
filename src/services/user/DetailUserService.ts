@@ -12,10 +12,10 @@ class DetailUserService {
                     id: user_id
                 },
                 select: {
-                    id: true,
                     name: true,
                     email: true,
                     status: true,
+                    roles: true,
                     is_admin: true,
                     organizationId: true,
                     companyId: true

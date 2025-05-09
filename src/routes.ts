@@ -26,6 +26,7 @@ import { ShowTotalController } from "./controllers/Total/ShowTotalController";
 import { ChartCompositeController } from "./controllers/Charts/ChartCompositeController";
 import { ShowCompanyByIdController } from "./controllers/Company/ShowCompanyByIdController";
 import { ShowCompanyByOrgController } from "./controllers/Company/ShowCompanyByOrgController";
+import { ShowUserByOrgController } from "./controllers/user/ShowUserByOrgController";
 
 
 const router = Router();
@@ -39,6 +40,7 @@ router.post('/user', new CreateUserController().handle as any);
 router.post('/session', new AuthUserController().handle as any);
 router.put('/user/edit', isAuthenticated as any, new EditUserController().handle as any);
 router.get('/user/show', isAuthenticated as any, new DetailUserController().handle as any);
+router.get('/user/org', isAuthenticated as any, new ShowUserByOrgController().handle as any);
 router.get('/user/all', isAuthenticated as any, new ListUserController().handle as any);
 router.delete('/user/remove', isAuthenticated as any, new RemoveUserController().handle as any);
 

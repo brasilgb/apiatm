@@ -68,6 +68,7 @@ class InsertDataAtmService {
                 return { message: 'Dados da venda atualizados com sucesso!' };
             }
         }
+        
         if (data.type === 'assoc') {
             let assoc = false;
             const org = await prismaClient.organization.findFirst({
@@ -78,7 +79,6 @@ class InsertDataAtmService {
                     id: true
                 },
             });
-
             for (const jdata of data.jdata) {
                 // Check if the record already exists
                 const existingAssoc = await prismaClient.association.findFirst({
@@ -108,6 +108,7 @@ class InsertDataAtmService {
                     });
                     assoc = false;
                 } else {
+                    //assoc_cnpj;assoc_filial;assoc_datmvt;assoc_ass;assoc_desass;assoc_valdev;assoc_valven;assoc_margem;assoc_repres;assoc_metdia;
                     await prismaClient.association.createMany({
                         data: {
                             id: org.id + jdata.assoc_filial + jdata.assoc_cnpj + jdata.assoc_datmvt + jdata.assoc_ass,
@@ -126,13 +127,12 @@ class InsertDataAtmService {
                     });
                     assoc = true;
                 }
-                if (assoc) {
-                    return { message: 'Dados de associação inseridos com sucesso!' };
-                } else {
-                    return { message: 'Dados de associação atualizados com sucesso!' };
-                }
             }
-            return 'Dados da associacao inseridos com sucesso!';
+            if (assoc) {
+                return { message: 'Dados de associação inseridos com sucesso!' };
+            } else {
+                return { message: 'Dados de associação atualizados com sucesso!' };
+            }
         }
         if (data.type === 'total') {
             let total = false;

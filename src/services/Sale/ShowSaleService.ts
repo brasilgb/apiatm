@@ -15,7 +15,6 @@ class ShowSaleService {
                 resumo_yearmonth: dat,
             }
         });
-console.log(showSaleService);
 
         return showSaleService;
     }

@@ -38,7 +38,7 @@ class EditUserService {
             });
 
             return userEdited;
-        } else {
+        } else { 
             return "Este e-mail já está em uso";
         }
     }
