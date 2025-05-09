@@ -4,7 +4,6 @@ interface ShowCompanyByIdRequest {
     company_id: string;
 }
 
-
 class ShowCompanyByIdService {
     async execute({ company_id }: ShowCompanyByIdRequest) {
         const findCompanyByIdService = await prismaClient.company.findFirst({

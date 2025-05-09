@@ -13,7 +13,6 @@ import { CreateCompanyController } from "./controllers/Company/CreateCompanyCont
 import { EditCompanyController } from "./controllers/Company/EditCompanyController";
 import { ListCompanyController } from "./controllers/Company/ListCompanyController";
 import { RemoveCompanyController } from "./controllers/Company/RemoveCompanyController";
-import { ShowCompanyByIdController } from "./controllers/Company/ShowCompanyByIdController";
 import { EditUserController } from "./controllers/user/EditUserController";
 import { EditSettingController } from "./controllers/Setting/EditSettingController";
 import { ListSettingController } from "./controllers/Setting/ListSettingController";
@@ -25,6 +24,8 @@ import { ShowSaleController } from "./controllers/Sale/ShowSaleController";
 import { ShowAssocController } from "./controllers/Assoc/ShowAssocController";
 import { ShowTotalController } from "./controllers/Total/ShowTotalController";
 import { ChartCompositeController } from "./controllers/Charts/ChartCompositeController";
+import { ShowCompanyByIdController } from "./controllers/Company/ShowCompanyByIdController";
+import { ShowCompanyByOrgController } from "./controllers/Company/ShowCompanyByOrgController";
 
 
 const router = Router();
@@ -54,6 +55,7 @@ router.put('/company/edit', isAuthenticated as any, new EditCompanyController().
 router.get('/company/show', isAuthenticated as any, new ShowCompanyByIdController().handle as any);
 router.get('/company/all', isAuthenticated as any, new ListCompanyController().handle as any);
 router.delete('/company/remove', isAuthenticated as any, new RemoveCompanyController().handle as any);
+router.get('/company/org', isAuthenticated as any, new ShowCompanyByOrgController().handle as any);
 
 // Setting
 router.get('/setting/show', isAuthenticated as any, new ListSettingController().handle as any);
